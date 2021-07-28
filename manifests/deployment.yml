@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "akssant-560a"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "akssant-560a"
+  template:
+    metadata:
+      labels:
+        app: "akssant-560a"
+    spec:
+      containers:
+        - name: "akssant-560a"
+          image: "crsant2.azurecr.io/akssant"
+          ports:
+          - containerPort: 80
